@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <center>
+        <h1>Kidney disease prediction</h1><br>
+        <form  action="{{url_for('predict')}}" methods="POST"></form>
+            <b> Age : <input type="text",name='a'><br><br>
+            Blood Pressure : <input type="text",name='b'><br><br>
+            Albumin : <input type="text",name='c'><br><br>
+            Sugar : <input type="text",name='d'><br><br>
+            Bloodglucoserandom : <input type="text",name='e'><br><br>
+            Blood urea : <input type="text",name='f'><br><br>
+            Serum creatinine : <input type="text",name='g'><br><br>
+            Hemoglobin : <input type="text",name='h'><br><br>
+            White blood cell count : <input type="text",name='i'><br><br>
+            Red blood cell count : <input type="text",name='j'><br><br>
+            Hypertension : <input type="text",name='k'><br><br>
+            Diabetes mellitus : <input type="text",name='l'><br><br>
+            Peda edema : <input type="text",name='m'><br><br></b>
+            <input type="submit",value='predict'>
+        </form>
+
+        <br>
+        <br>
+        {{ prediction_text }}
+    </center>
+</body>
+</html>
